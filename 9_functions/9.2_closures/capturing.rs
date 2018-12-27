@@ -34,6 +34,9 @@ fn main() {
 
     let movable = Box::new(3); // a non-copy type, i.e. heap based memory
 
+    // N.B. all vaues in Rust are stack allocated by default. Values can be `Boxed` (allocated in the heap) by creating a Box<T>.
+    // A box is a smart pointer to aheap allocated value of type T.
+
     let consume = || {
         println!("`movable`: {:?}", movable);  // movable is owned in this scope now
         mem::drop(movable);
